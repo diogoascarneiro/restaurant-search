@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TextInput } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-const SearchBar = ({ searchQuery, onQueryChange }) => {
+const SearchBar = ({ searchQuery, onQueryChange, onQuerySubmit }) => {
   return (
     <View style={styles.container}>
       <AntDesign name="search1" style={styles.iconStyle} />
@@ -12,7 +12,8 @@ const SearchBar = ({ searchQuery, onQueryChange }) => {
         placeholder="Search restaurants"
         placeholderTextColor="#FFFFFF82"
         autoCapitalize="none"
-        autoCorrect={false}></TextInput>
+        autoCorrect={false}
+        onEndEditing={onQuerySubmit}></TextInput>
     </View>
   );
 };
